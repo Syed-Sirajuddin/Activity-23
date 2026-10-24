@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My Game Profile</h1>
+    <button onclick="showProfile()">Show Profile</button>
+    <div>Name: <span id="name"></span></div>
+    <div>Score: <span id="score"></span></div>
+    <div>Top Score: <span id="record"></span></div>
+    <div>Rank: <span id="rank"></span></div>
+    <div>Greetings: <span id="greeting"></span></div>
+    <div>Start: <span id="stars"></span></div>
+    <div>Bonus Level: <span id="bonus"></span></div>
+    <div>Team Name: <span id="team"></span></div>
+    
+<script>
+
+function showProfile(){
+    //Variables
+    let name        = "Alex";
+    let myScore     = 75;
+    let highScore   = 100;
+    let bonus       = null; 
+    let team;
+
+//  Comparision Operator
+let isTopScore = myScore == highScore
+
+let rank;
+if (myScore >=80) {
+    rank ="Gold";
+} else if (myScore >-50){
+    rank = "silver"
+}else {
+    rank = "Bronze";
+}
+let stars =""
+let count = 0;
+while (count < 5 ){
+    stars=stars + "* ";
+    count = count + 1; 
+}
+
+document.getElementById("name").innerHTML = name;
+document.getElementById("score").innerHTML = myScore;
+document.getElementById("record").innerHTML = isTopScore;
+document.getElementById("rank").innerHTML = rank;
+document.getElementById("stars").innerHTML = stars;
+document.getElementById("bonus").innerHTML = bonus;
+document.getElementById("team").innerHTML = team;
+
+}
+
+
+
+</script>
+
+</body>
+</html>
